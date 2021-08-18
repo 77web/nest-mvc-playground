@@ -11,8 +11,7 @@ async function bootstrap() {
 
   const environment = nunjucks.configure(
     [
-      join(__dirname, '..', 'templates'),
-      join(__dirname, '.', 'system_template'),
+      join(__dirname, '..', '..', 'templates'),
     ],
     {
       autoescape: true,
@@ -24,12 +23,12 @@ async function bootstrap() {
       express: app,
     },
   );
+
   app.engine('njk', environment.render);
   app.setViewEngine('njk');
   app.set('view cache', true);
 
   app.useStaticAssets(join(__dirname, '..', 'public'));
-  app.setBaseViewsDir(join(__dirname, '..', 'templates'));
 
   await app.listen(3000);
 }
