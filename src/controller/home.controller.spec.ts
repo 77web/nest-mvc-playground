@@ -16,7 +16,7 @@ describe('HomeController', () => {
 
   describe('root', () => {
     it('should return "Hello World!"', () => {
-      expect(homeController.index()).toBe({ hello: 'Hello World!' });
+      expect(homeController.index()).toEqual({ hello: 'Hello World!' });
     });
   });
 });
