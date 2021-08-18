@@ -9,6 +9,7 @@ if (process.env.NODE_ENV !== 'production') {
   dotenv.config({
     path: '../',
   });
+  console.log(process.env.DATABASE_NAME);
 }
 
 async function bootstrap() {
