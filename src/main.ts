@@ -1,8 +1,15 @@
 import { NestFactory } from '@nestjs/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import * as nunjucks from 'nunjucks';
+import * as dotenv from 'dotenv';
 import { join } from 'path';
 import { AppModule } from './app.module';
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config({
+    path: '../',
+  });
+}
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(
