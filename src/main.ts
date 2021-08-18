@@ -6,10 +6,7 @@ import { join } from 'path';
 import { AppModule } from './app.module';
 
 if (process.env.NODE_ENV !== 'production') {
-  dotenv.config({
-    path: '../',
-  });
-  console.log(process.env.DATABASE_NAME);
+  dotenv.config();
 }
 
 async function bootstrap() {
