@@ -7,7 +7,7 @@ export class HomeController {
 
   @Get()
   @Render('home/index')
-  getHello() {
+  index() {
     return { hello: this.appService.getHello() };
   }
 }
